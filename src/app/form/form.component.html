@@ -1,4 +1,26 @@
-<form>
+<form class="form">
+  <div class="form__add-container">
+    <select class="select">
+      <option value="ing" selected class="select__income">+</option>
+      <option value="egr" class="select__expense">-</option>
+    </select>
+    <input
+      type="text"
+      class="form__add-container__description"
+      placeholder="Agregar Descripción"
+    />
+    <input
+      type="number"
+      class="form__add-container__value"
+      placeholder="Valor"
+    />
+    <button class="form__add-container__btn">
+      <i class="ion-ios-checkmark-outline"></i>
+    </button>
+  </div>
+</form>
+
+<!-- <form>
   <div class="agregar">
     <div class="agregar_contenedor">
       <select class="agregar_tipo">
@@ -16,4 +38,4 @@
       </button>
     </div>
   </div>
-</form>
+</form> -->
