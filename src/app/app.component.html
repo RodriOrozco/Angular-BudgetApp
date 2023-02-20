@@ -1,4 +1,9 @@
-<app-header></app-header>
+<app-header
+  [budgetTotal]="getBudgetTotal()"
+  [incomesTotal]="getIncomesTotal()"
+  [expensesTotal]="getExpensesTotal()"
+  [percentageTotal]="getPercentageTotal()"
+></app-header>
 <app-form></app-form>
 <div class="container-budget-values">
   <app-incomes></app-incomes>

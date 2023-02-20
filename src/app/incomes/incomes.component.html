@@ -1,22 +1,10 @@
 <div class="incomes">
   <h2 class="incomes__title">Ingresos</h2>
 
-  <div class="income-card">
-    <p class="income-card__description">Salario</p>
+  <div *ngFor="let income of incomes" class="income-card">
+    <p class="income-card__description">{{ income.description }}</p>
     <div class="card-right">
-      <p class="card-right__value">+ 2,100.00</p>
-      <div class="card-right__delete-contain">
-        <button class="card-right__delete-contain__btn">
-          <i class="ion-ios-close-outline"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="income-card">
-    <p class="income-card__description">Venta coche</p>
-    <div class="card-right">
-      <p class="card-right__value">+ 1,500.00</p>
+      <p class="card-right__value">+ ${{ income.value }}</p>
       <div class="card-right__delete-contain">
         <button class="card-right__delete-contain__btn">
           <i class="ion-ios-close-outline"></i>
