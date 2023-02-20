@@ -15,4 +15,8 @@ export class IncomesComponent implements OnInit {
   ngOnInit(): void {
     this.incomes = this.IncomeService.incomes;
   }
+
+  deleteCard = (income: Income) => {
+    this.IncomeService.deleteIncome(income);
+  };
 }

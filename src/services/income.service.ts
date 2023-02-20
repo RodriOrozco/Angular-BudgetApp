@@ -5,4 +5,9 @@ export class IncomeService {
     new Income('salary', 1000),
     new Income('guitar sold', 300),
   ];
+
+  deleteIncome = (income: Income) => {
+    const incomeIndex = this.incomes.indexOf(income);
+    this.incomes.splice(incomeIndex, 1);
+  };
 }

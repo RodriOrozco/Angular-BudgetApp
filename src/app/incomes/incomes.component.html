@@ -6,7 +6,10 @@
     <div class="card-right">
       <p class="card-right__value">+ ${{ income.value }}</p>
       <div class="card-right__delete-contain">
-        <button class="card-right__delete-contain__btn">
+        <button
+          class="card-right__delete-contain__btn"
+          (click)="deleteCard(income)"
+        >
           <i class="ion-ios-close-outline"></i>
         </button>
       </div>

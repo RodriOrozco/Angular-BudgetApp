@@ -1,26 +1,16 @@
 <div class="expenses">
   <h2 class="expenses__title">Egresos</h2>
 
-  <div class="expense-card">
-    <p class="expense-card__description">Renta departamento</p>
+  <div class="expense-card" *ngFor="let expense of expenses">
+    <p class="expense-card__description">{{ expense.description }}</p>
     <div class="card-right">
-      <p class="card-right__value">- 900.00</p>
-      <p class="card-right__percentage">21%</p>
+      <p class="card-right__value">- {{ expense.value }}</p>
+      <p class="card-right__percentage">{{ calculatePercentage(expense) }}%</p>
       <div class="card-right__delete-contain">
-        <button class="card-right__delete-contain__btn">
-          <i class="ion-ios-close-outline"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="expense-card">
-    <p class="expense-card__description">Ropa</p>
-    <div class="card-right">
-      <p class="card-right__value">- 435.28</p>
-      <p class="card-right__percentage">10%</p>
-      <div class="card-right__delete-contain">
-        <button class="card-right__delete-contain__btn">
+        <button
+          class="card-right__delete-contain__btn"
+          (click)="deleteCard(expense)"
+        >
           <i class="ion-ios-close-outline"></i>
         </button>
       </div>
