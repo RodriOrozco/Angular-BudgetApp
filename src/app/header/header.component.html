@@ -1,12 +1,16 @@
 <div class="header">
   <div class="budget">
     <h2 class="budget__title">Presupuesto Disponible:</h2>
-    <p class="budget__value">{{ budgetTotal }}</p>
+    <p class="budget__value">
+      {{ budgetTotal | currency : "ARS" : "$" : "1.2" }}
+    </p>
 
     <div class="budget-incomes">
       <h3 class="budget-incomes__title">Ingresos</h3>
       <div class="incomes-top-box-right">
-        <p class="incomes-top-box-right__value">+ {{ incomesTotal }}</p>
+        <p class="incomes-top-box-right__value">
+          {{ incomesTotal | currency : "ARS" : "$" : "1.2" }}
+        </p>
         <span class="incomes-top-box-right__percentage">&nbsp;</span>
       </div>
     </div>
@@ -14,10 +18,12 @@
     <div class="budget-expenses">
       <h3 class="budget-expenses__title">Egresos</h3>
       <div class="expenses-bottom-box-right">
-        <p class="expenses-bottom-box-right__value">- {{ expensesTotal }}</p>
-        <span class="expenses-bottom-box-right__percentage"
-          >{{ percentageTotal }}%</span
-        >
+        <p class="expenses-bottom-box-right__value">
+          - {{ expensesTotal | currency : "ARS" : "$" : "1.2" }}
+        </p>
+        <span class="expenses-bottom-box-right__percentage">{{
+          percentageTotal | percent
+        }}</span>
       </div>
     </div>
   </div>

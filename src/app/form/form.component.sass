@@ -13,12 +13,31 @@
             width: 20rem
             height: 2.5rem
             padding: 0 1rem
+            &:focus
+                border: 1px solid green
+                outline: none
         &__value
             width: 8rem
             height: 2.5rem
             padding: 0 1rem
             -webkit-appearance: none
             -moz-appearance: textfield
+            &:focus
+                border: 2px solid green
+                outline: none
+        &__btn
+            font-size: 35px
+            background: none
+            border: none
+            color: #28B9B5
+            cursor: pointer
+            display: inline-block
+            vertical-align: middle
+            line-height: 1.1
+
+            &:focus
+                border: 2px solid green
+                outline: none
 
         .select
             width: 55px
@@ -27,7 +46,15 @@
             font-weight: 300
             transition: border 0.3s
             text-align: center
+            &:focus
+                border: 2px solid green
+                outline: none
             &__income,
             &__expense
                 width: 55px
                 text-align: center
+
+.--redfocus:focus
+    border: 2px solid red !important
+.red
+    color: red

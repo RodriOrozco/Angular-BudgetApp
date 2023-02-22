@@ -4,7 +4,9 @@
   <div *ngFor="let income of incomes" class="income-card">
     <p class="income-card__description">{{ income.description }}</p>
     <div class="card-right">
-      <p class="card-right__value">+ ${{ income.value }}</p>
+      <p class="card-right__value">
+        {{ income.value | currency : "ARS" : "$" : "1.2" }}
+      </p>
       <div class="card-right__delete-contain">
         <button
           class="card-right__delete-contain__btn"

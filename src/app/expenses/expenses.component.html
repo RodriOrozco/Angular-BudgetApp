@@ -4,8 +4,12 @@
   <div class="expense-card" *ngFor="let expense of expenses">
     <p class="expense-card__description">{{ expense.description }}</p>
     <div class="card-right">
-      <p class="card-right__value">- {{ expense.value }}</p>
-      <p class="card-right__percentage">{{ calculatePercentage(expense) }}%</p>
+      <p class="card-right__value">
+        - {{ expense.value | currency : "ARS" : "$" : "1.2" }}
+      </p>
+      <p class="card-right__percentage">
+        {{ calculatePercentage(expense) | percent }}
+      </p>
       <div class="card-right__delete-contain">
         <button
           class="card-right__delete-contain__btn"

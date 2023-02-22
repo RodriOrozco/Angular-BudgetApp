@@ -1,41 +1,36 @@
-<form class="form">
+<form class="form" (ngSubmit)="f.form.valid && addNewValue()" #f="ngForm">
   <div class="form__add-container">
-    <select class="select">
-      <option value="ing" selected class="select__income">+</option>
-      <option value="egr" class="select__expense">-</option>
+    <select
+      class="select"
+      (change)="selectOperation($event)"
+      [ngClass]="{ '--redfocus': selectType === 'expenseOperation' }"
+    >
+      <option value="incomeOperation" selected class="select__income">+</option>
+      <option value="expenseOperation" class="select__expense">-</option>
     </select>
     <input
       type="text"
       class="form__add-container__description"
       placeholder="Agregar Descripción"
+      name="descriptionInput"
+      [(ngModel)]="descriptionInput"
+      [ngClass]="{ '--redfocus': selectType === 'expenseOperation' }"
+      required
     />
     <input
       type="number"
       class="form__add-container__value"
       placeholder="Valor"
+      name="valueInput"
+      [(ngModel)]="valueInput"
+      [ngClass]="{ '--redfocus': selectType === 'expenseOperation' }"
+      required
     />
-    <button class="form__add-container__btn">
-      <i class="ion-ios-checkmark-outline"></i>
+    <button class="form__add-container__btn" type="submit">
+      <i
+        class="ion-ios-checkmark-outline"
+        [ngClass]="{ red: selectType === 'expenseOperation' }"
+      ></i>
     </button>
   </div>
 </form>
-
-<!-- <form>
-  <div class="agregar">
-    <div class="agregar_contenedor">
-      <select class="agregar_tipo">
-        <option value="ing" selected>+</option>
-        <option value="egr">-</option>
-      </select>
-      <input
-        type="text"
-        class="agregar_descripcion"
-        placeholder="Agregar Descripción"
-      />
-      <input type="number" class="agregar_valor" placeholder="Valor" />
-      <button class="agregar_btn">
-        <i class="ion-ios-checkmark-outline"></i>
-      </button>
-    </div>
-  </div>
-</form> -->

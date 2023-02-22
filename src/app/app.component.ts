@@ -38,7 +38,7 @@ export class AppComponent {
   };
 
   getPercentageTotal = (): number => {
-    return this.getIncomesTotal() / this.getExpensesTotal();
+    return this.getExpensesTotal() / this.getIncomesTotal();
   };
 
   getBudgetTotal = (): number => {
